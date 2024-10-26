@@ -1,0 +1,185 @@
+/* Background and Section Styling */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.register-account {
+    background: url(login.jpeg) no-repeat center top;
+    background-size: cover;
+    padding: 200px 0 150px;
+    width: auto;
+    position: fixed; /* Fija la posición para cubrir toda la ventana */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Asegúrate de que la imagen esté detrás de otros elementos */
+    /* Eliminar el filtro de desenfoque */
+}
+
+/* Login Form Styling */
+.login-form input {
+    width: 100%;
+    border: 1px solid #dddddd;
+    padding: 0.7em;
+    margin-bottom: 15px;
+    border-radius: 3px;
+}
+
+.login-form {
+    margin-bottom: 30px;
+}
+
+/* Form Container Styling */
+.signform {
+    background-color: #FFF;
+    padding: 35px 20px 40px;
+    margin: 0 auto;
+    width: 70%;
+    max-width: 680px;
+    position: relative; /* Permite que el formulario esté en el flujo del documento */
+    z-index: 1; /* Asegúrate de que el formulario esté por encima de la imagen de fondo */
+}
+
+/* Social Login Buttons */
+.bts {
+    padding: 2em;
+    margin: 0.6em 0;
+}
+
+.bts-a:hover {
+    color: #79b42b;
+    text-decoration: none;
+}
+
+.bts span {
+    text-align: center; 
+    font-size: 0.9em;
+    font-family: 'Arimo', sans-serif;
+    font-weight: 700;
+}
+
+/* Social Buttons Style */
+.social {
+    transition: background 200ms ease-in-out;
+    margin-top: 12px;
+    display: block;
+    color: #ffffff;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.fblogin { background-color: #3b5898; }
+.fblogin:hover { background-color: #5177c2; }
+
+.gplogin { background-color: #dd4c39; }
+.gplogin:hover { background-color: #f06e60; }
+
+.twlogin { background-color: #00abee; }
+.twlogin:hover { background-color: #4cbde6; }
+
+/* Input Focus Effects */
+.login-form input:focus, .login-form input:active {
+    border-bottom: 2px solid #79B42B;
+    outline: none;
+}
+
+/* Submit Button */
+.subbt {
+    background-color: #79b42b;
+    border: none;
+    color: #FFF;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 3px;
+    width: 100%;
+    font-family: 'Arimo', sans-serif;
+    font-weight: 700;
+    transition: background 500ms ease-in-out;
+}
+
+.subbt:hover {
+    background-color: #66a325;
+}
+
+/* Other Styling */
+.right a {
+    color: #b6b6b6;
+    text-decoration: none;
+    font-family: 'Arimo', sans-serif;
+    font-size: 0.9em;
+    float: right;
+    margin-top: 5px;
+}
+
+.headit h4 {
+    color: #474646;
+    margin-top: 0;
+}
+
+.bts a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+/* 'Or' Divider Styling */
+form#login-form:before {
+    content: 'or';
+    color: #79b42b;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    height: 0.5em;
+    width: 0.5em;
+    left: 1.5em;
+    z-index: 900;
+}
+
+form#login-form:after {
+    content: '';
+    position: absolute;
+    background: rgba(128, 128, 128, 0.3);
+    height: 3.25em;
+    width: 0.1em;
+    left: 2.15em;
+    box-shadow: 0 8.8em 0 0 rgba(128, 128, 128, 0.3);
+}
+
+/* Responsive Styling */
+@media screen and (min-width: 640px) {
+    .left { width: 47%; display: inline-table; float: right; }
+    .right { width: 40%; display: inline-table; margin-left: 50px; }
+}
+
+@media screen and (max-width: 640px) {
+    .left, .right { width: 100%; display: inline-table; margin-bottom: 25px; }
+    .signform { width: 90%; min-width: 255px; margin: 0 auto; }
+    form#login-form:before, form#login-form:after { content: ''; }
+}
+
+@media screen and (min-width: 1400px) {
+    .signform { width: 680px; }
+}
+
+@media screen and (max-width: 460px) {
+    .signform { width: 85%; left: 10%; }
+}
+
+/* Social Icon Positioning */
+.bts i {
+    margin: 15px 15px 15px 20px;
+    float: left;
+    width: 5%;
+    font-size: 20px;
+    margin-left: 20px;
+}

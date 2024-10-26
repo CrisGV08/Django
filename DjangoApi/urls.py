@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from api.login.login_view import login_view
+from api.home.home_view import home_view
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    path('index/', login_view, name = "login_vista"),
+    path('', login_view, name = "index"),
+    path('home/', home_view, name = "home"),
 ]

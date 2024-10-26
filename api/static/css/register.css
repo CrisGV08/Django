@@ -1,0 +1,93 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Background and Section Styling */
+.register-account {
+    background: url(register.jpg) no-repeat center top;
+    background-size: cover;
+    padding: 200px 0 150px; /* Top and bottom padding for spacing */
+    width: auto;
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Background layer */
+}
+
+/* Sign Up Form Styling */
+.signform {
+    background-color: #FFF;
+    padding: 35px 20px 40px;
+    margin: 0 auto;
+    width: 70%;
+    max-width: 680px;
+    position: relative; /* Permite que el formulario esté en el flujo del documento */
+    z-index: 1; /* Asegúrate de que el formulario esté por encima de la imagen de fondo */
+ /* Above the background */
+}
+
+/* Input Fields Styling */
+.register-form input {
+    width: 100%;
+    border: 1px solid #dddddd; /* Light gray border */
+    padding: 12px; /* Increased padding for a better look */
+    margin-bottom: 20px; /* More space between fields */
+    border-radius: 8px; /* More rounded corners */
+    font-size: 1em; /* Font size */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus */
+}
+
+.register-form input:focus {
+    border-color: #79B42B; /* Highlight border on focus */
+    outline: none; /* Remove outline */
+    box-shadow: 0 0 5px rgba(121, 180, 43, 0.5); /* Glow effect on focus */
+}
+
+/* Submit Button */
+.subbt {
+    background-color: #79b42b; /* Button color */
+    border: none; /* No border */
+    color: #FFF; /* White text */
+    padding: 14px; /* Adjusted padding */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 1.2em; /* Slightly larger font size */
+    border-radius: 8px; /* Rounded corners */
+    width: 100%; /* Full width */
+    font-weight: 700; /* Bold font */
+    transition: background 0.3s ease, transform 0.2s ease; /* Transition effects */
+}
+
+.subbt:hover {
+    background-color: #66a325; /* Darker green on hover */
+    transform: translateY(-2px); /* Button lift effect */
+}
+
+/* Login Link Styling */
+.login-link {
+    margin-top: 30px; /* Increased space above the link */
+    text-align: center; /* Center the text */
+    padding: 15px; /* Added padding */
+    border: 1px solid #79b42b; /* Border around the box */
+    border-radius: 8px; /* Rounded corners for the box */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+.login-link p {
+    margin: 0; /* Remove default margin */
+    color: #474646; /* Text color */
+}
+
+.login-link a {
+    color: #79b42b; /* Link color */
+    font-weight: 700; /* Bold link */
+    text-decoration: none; /* No underline */
+}
+
+.login-link a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
