@@ -5,22 +5,23 @@
 * Template URI: https://untree.co/
 * License: https://creativecommons.org/licenses/by/3.0/
 */ -->
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Untree.co">
-  <link rel="shortcut icon" href="favicon.png">
+  <link rel="shortcut icon" href="{% static 'images/favicon.png">
 
   <meta name="description" content="" />
   <meta name="keywords" content="bootstrap, bootstrap4" />
 
 		<!-- Bootstrap CSS -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-		<link href="css/tiny-slider.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
+		<link href="{% static 'css/tiny-slider.css'%}" rel="stylesheet">
+		<link href="{% static 'css/style.css'%}" rel="stylesheet">
 		<title>Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites by Untree.co </title>
 	</head>
 
@@ -30,7 +31,7 @@
 		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
 			<div class="container">
-				<a class="navbar-brand" href="index.html">Furni<span>.</span></a>
+				<a class="navbar-brand" href="{% url 'home'%}">Furni<span>.</span></a>
 
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -39,18 +40,19 @@
 				<div class="collapse navbar-collapse" id="navbarsFurni">
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 						<li class="nav-item ">
-							<a class="nav-link" href="index.html">Home</a>
+							<a class="nav-link" href="{% url 'home'%}">Home</a>
 						</li>
-						<li><a class="nav-link" href="shop.html">Shop</a></li>
-						<li><a class="nav-link" href="about.html">About us</a></li>
-						<li><a class="nav-link" href="services.html">Services</a></li>
-						<li><a class="nav-link" href="blog.html">Blog</a></li>
-						<li><a class="nav-link" href="contact.html">Contact us</a></li>
+						<li><a class="nav-link" href="{% url 'shop'%}">Shop</a></li>
+						<li><a class="nav-link" href="{% url 'about'%}">About us</a></li>
+						<li><a class="nav-link" href="{% url 'services'%}">Services</a></li>
+						<li><a class="nav-link" href="{% url 'blog'%}">Blog</a></li>
+						<li><a class="nav-link" href="{% url 'contact'%}">Contact us</a></li>
+						<li><a href="#" id="logout-button" class="logout">Logout</a></li>
 					</ul>
-
+					
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
-						<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+						<li><a class="nav-link" href="#"><img src="{% static 'images/user.svg'%}"></a></li>
+						<li><a class="nav-link" href="{% url 'cart'%}"><img src="{% static 'images/cart.svg'%}"></a></li>
 					</ul>
 				</div>
 			</div>
@@ -89,7 +91,7 @@
           </span>
           <h2 class="display-3 text-black">Thank you!</h2>
           <p class="lead mb-5">You order was successfuly completed.</p>
-          <p><a href="shop.html" class="btn btn-sm btn-outline-black">Back to shop</a></p>
+          <p><a href="{% url 'shop'%}" class="btn btn-sm btn-outline-black">Back to shop</a></p>
         </div>
       </div>
     </div>
@@ -100,13 +102,13 @@
 			<div class="container relative">
 
 				<div class="sofa-img">
-					<img src="images/sofa.png" alt="Image" class="img-fluid">
+					<img src="{% static 'images/sofa.png'%}" alt="Image" class="img-fluid">
 				</div>
 
 				<div class="row">
 					<div class="col-lg-8">
 						<div class="subscription-form">
-							<h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+							<h3 class="d-flex align-items-center"><span class="me-1"><img src="{% static 'images/envelope-outline.svg'%}" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
 
 							<form action="#" class="row g-3">
 								<div class="col-auto">
@@ -199,11 +201,29 @@
 			</div>
 		</footer>
 		<!-- End Footer Section -->	
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
+<script>
+    document.getElementById('logout-button').addEventListener('click', function(event) {
+        event.preventDefault();  // Evita que el enlace redirija automáticamente
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "¿Seguro que deseas cerrar sesión?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, salir'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "{% url 'logout' %}";  // Redirige al usuario a la URL de logout
+            }
+        });
+    });
+</script>
 
-
-		<script src="js/bootstrap.bundle.min.js"></script>
-		<script src="js/tiny-slider.js"></script>
-		<script src="js/custom.js"></script>
+		<script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+		<script src="{% static 'js/tiny-slider.js'%}"></script>
+		<script src="{% static 'js/custom.js'%}"></script>
 	</body>
 
 </html>

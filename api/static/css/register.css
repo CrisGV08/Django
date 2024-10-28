@@ -7,7 +7,7 @@ body {
 
 /* Background and Section Styling */
 .register-account {
-    background: url(register.jpg) no-repeat center top;
+    background: url(/static/images/register.jpg) no-repeat center top;
     background-size: cover;
     padding: 200px 0 150px; /* Top and bottom padding for spacing */
     width: auto;
