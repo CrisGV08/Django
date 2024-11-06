@@ -25,13 +25,18 @@ from api.home.home_view import (home_view,home_shop,home_about,home_services,
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    path('index', login_view, name = "index"),
+    path('index/', login_view, name = "index"),
+    
     path('logout/', logout_view, name = "logout"),
+    
     path('register/', register_view, name = "register"),
     path('forgot_password/', forgot_login_view, name = "forgot_password"),
+    
+    
     path('', home_view, name = "home"),
     path('home/', home_view, name = "home"),
     path('shop/', home_shop, name = "shop"),
+
     path('about/', home_about, name = "about"),
     path('services/', home_services, name = "services"),
     path('blog/', home_blog, name = "blog"),

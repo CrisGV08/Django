@@ -55,9 +55,9 @@ def register_view(request):
             messages.error(request, '⚠️ El correo electrónico ya está registrado ⚠️')
             return redirect('register')
 
-        # Crear usuario inactivo
+        
         user = User.objects.create_user(username=username, email=email, password=password1)
-        user.is_active = False  # Marcar usuario como inactivo
+        user.is_active = False  
         user.save()
         
         messages.success(request, 'Registro exitoso. Verifica tu correo para activar la cuenta.')

@@ -4,6 +4,8 @@
 * Author URI: https://untree.co/
 * License: https://creativecommons.org/licenses/by/3.0/
 */
+
+{% load static %}
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 body {
   overflow-x: hidden;
@@ -178,7 +180,7 @@ a {
       position: absolute;
       width: 255px;
       height: 217px;
-      background-image: url("../images/dots-light.svg");
+      background-image: url("{% static 'images/dots-light.svg'%}");
       background-size: contain;
       background-repeat: no-repeat;
       right: -100px;
@@ -307,7 +309,7 @@ a {
       content: "";
       width: 255px;
       height: 217px;
-      background-image: url("../images/dots-yellow.svg");
+      background-image: url("{% static 'images/dots-yellow.svg'%}");
       background-repeat: no-repeat;
       background-size: contain;
       -webkit-transform: translate(-40%, -40%);
@@ -353,7 +355,7 @@ a {
       content: "";
       width: 255px;
       height: 217px;
-      background-image: url("../images/dots-green.svg");
+      background-image: url("{% static 'images/dots-green.svg'%}");
       background-size: contain;
       background-repeat: no-repeat;
       -webkit-transform: translate(-40%, -40%);
@@ -738,3 +740,14 @@ textarea {
     height: 50px;
     border-radius: 50%;
     background: rgba(59, 93, 80, 0.2); }
+
+    /* Estilos específicos para el botón de Logout */
+.menu li a.logout {
+  background-color: #DC3545; /* Color rojo para Logout */
+  color: white;
+}
+
+.menu li a.logout:hover {
+  background-color: #c82333; /* Más oscuro al pasar el cursor */
+}
+
